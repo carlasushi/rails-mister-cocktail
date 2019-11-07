@@ -1,0 +1,30 @@
+<p>
+  <h2><strong><%= @cocktail.name %></strong></h2>
+
+  <% if @cocktail.doses.empty? %>
+    <h4>Be the first one to add doses</h4>
+  <% else %>
+    <ul>
+      <% @cocktail.doses.each do |dose| %>
+      <li>
+        <strong>Description:</strong>
+        <%= dose.description %> |
+        <%= dose.ingredient.name %>
+      </li>
+      <li>
+        <%= link_to "Delete dose", dose_path(dose),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
+      </li>
+      <% end %>
+    </ul>
+  <% end %>
+</p>
+
+<%= link_to "Add a dose", new_cocktail_dose_path(@cocktail)  %> |
+<%= link_to 'Back to cocktails', cocktails_path %> |
+<%= link_to 'Delete cocktail', cocktail_path(@cocktail),
+      method: :delete,
+      data: { confirm: "Are you sure?" }%>
+
+
