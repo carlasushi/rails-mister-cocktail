@@ -13,12 +13,6 @@ before_action :set_cocktail, only: [:show, :edit, :update, :destroy]
     @cocktail = Cocktail.new
   end
 
-  def edit
-  end
-
-  def update
-  end
-
   def create
     @cocktail = Cocktail.new(cocktail_params)
     if @cocktail.save

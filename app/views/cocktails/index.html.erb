@@ -1,10 +1,22 @@
 <h1>cocktails</h1>
-
-<ul>
-  <% @cocktails.each do |cocktail| %>
-  <li><strong>Cocktail Name:<%= link_to cocktail.name, cocktail_path(cocktail) %></strong></li>
-  <% end %>
-</ul>
+<div class="container">
+  <div class="row">
+    <% @cocktails.each do |cocktail| %>
+      <div class="col-4">
+        <div class="wrapper">
+          <div class="block>
+            <img src="https://images.unsplash.com/photo-1550426735-c33c7ce414ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1520&q=80" alt="">
+            <div class="content">
+                <strong>Cocktail Name:<%= link_to cocktail.name, cocktail_path(cocktail) %></strong>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ante lorem, interdum a pulvinar in, ultrices mattis augue. Nam maximus enim tortor. Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
 
 <%= link_to "Add new cocktail", new_cocktail_path %>
 
