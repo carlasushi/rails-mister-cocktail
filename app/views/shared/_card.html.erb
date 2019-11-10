@@ -1,0 +1,12 @@
+<article class="col-4">
+  <div class="cards">
+    <div class="cocktail-photo" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path cocktail.photo %>')"></div>
+      <hr class="divider"/>
+        <h2 class="title"><%= cocktail.name %></h2>
+        <div class="info">
+          <hr class="divider"/>
+            <p class="lead">Are you ready see the next page and be amazed of what you can find?</p><a><%= link_to "Recipe", cocktail_path(cocktail), class: "btn btn-lg center-block" %>
+          </a>
+        </div>
+  </div>
+</article>

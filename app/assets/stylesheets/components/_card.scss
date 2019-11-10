@@ -1,43 +1,97 @@
 
-$heading:'Lato';
-$body:'Lora';
-
-body{
-  font-family:$body;
-  color:#444;
-  line-height:145%;
-  font-size:rem( 18px );
+// Variables
+$light:  #febbbb;
+$medium: #fe9090;
+$dark:   #ff5c5c;
+$dark-v1: #c84848;
+$text-color: #999;
+$cta: #00c5a7;
+// Styles
+body {
+  background: $light;
+  background: linear-gradient(135deg, $light 0%,$medium 45%,$dark 100%);
+  font-size: 10px;
+  padding: 2em;
+}
+.full-screen {
+  height: 100vw;
+  position: relative;
 }
 
-h2{
-  font-family:$heading;
-  font-size:rem( 24px );
+// General content
+.title {
+  text-align: center;
+  font-weight: 100;
 }
-
-a{
-  color:darken( crimson, 15% );
+.divider {
+  border-bottom: 1px solid $light;
 }
+// Cards
+.cards {
+  background: #f2f2f2;
+  border-radius: 3px;
+  cursor: pointer;
+  height: 500px;
+  padding: 1.5em;
+  position: relative;
+  transition: height 0.4s, box-shadow 0.5s;
+  margin: 20px;
 
-.wrapper{
-  display: flex;
-  flex-flow: column wrap;
-  align-content: space-between;
-  height:2000px;
-  padding:30px;
-  .block{
-    width:31.5%;
-    margin:0 0 30px 0;
-    box-shadow:0 0 10px rgba(0,0,0,.2);
+  &:hover {
+    box-shadow: 0 0 2em #999;
+    height: 58em;
+    transition: height 0.3s ease, box-shadow 0.5s ease;
 
-    img{
-      width:100%;
-      display:block;
+    .divider {
+      opacity: 0.5;
     }
-    .content{
-      display:block;
-      margin:0;
-      padding:5px 15px 15px 15px;
 
+    .info {
+      transition: top 0.5s ease, opacity 1s ease;
+      visibility: visible;
+      top: 1%;
+      opacity: 1;
+      .divider {
+        //opacity: 1;
+      }
     }
   }
+
+  .info {
+    position: relative;
+    visibility: hidden;
+    top: -50%;
+    opacity: 0;
+  }
+
+  .title {
+    color: $text-color;
+    text-align: center;
+    font-weight: 300;
+  }
+  .lead {
+    color: $text-color;
+    font-weight: 100;
+    font-size: 2em;
+    text-align: center;
+    hyphens: auto;
+  }
+  .btn {
+    color: #282936;
+    border: 1px solid $cta;
+    border-radius: 5px;
+    transition: color 0.3s, background 0.3s;
+    &:hover {
+      background: $cta;
+      color: white;
+      transition: background 0.5s ease;
+    }
+  }
+}
+
+.cocktail-photo {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  display: block;
 }

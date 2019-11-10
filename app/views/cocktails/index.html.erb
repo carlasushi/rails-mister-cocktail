@@ -1,24 +1,22 @@
-<h1>cocktails</h1>
-<div class="container">
+
+
+<div class="container full-screen">
+  <section class="row">
+    <h1 class="title">Miami Cocktails</h1>
+    <hr/>
+    <div class="col-xs-8 col-xs-offset-2">
+      <p class="lead text-center">Now you can make amazing Miami inspired cocktails from home</p>
+      <hr/>
+    </div>
+  </section>
   <div class="row">
     <% @cocktails.each do |cocktail| %>
-      <div class="col-4">
-        <div class="wrapper">
-          <div class="block>
-            <img src="https://images.unsplash.com/photo-1550426735-c33c7ce414ff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1520&q=80" alt="">
-            <div class="content">
-                <strong>Cocktail Name:<%= link_to cocktail.name, cocktail_path(cocktail) %></strong>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla ante lorem, interdum a pulvinar in, ultrices mattis augue. Nam maximus enim tortor. Lorem ipsum dolor sit amet, consectetur adipiscing.</p>
-                <a href="#" class="read-more">Read More</a>
-            </div>
-          </div>
-        </div>
-      </div>
+      <%= render 'shared/card', cocktail: cocktail %>
     <% end %>
-  </div>
 </div>
 
-<%= link_to "Add new cocktail", new_cocktail_path %>
+
+
 
 
 
